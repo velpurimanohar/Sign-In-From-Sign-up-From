@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+    <section>
+        <div class="home">
+            <div class="home-left">
+                <img src="https://internetcard.in/assets/login-illustration.svg" alt="person-img" class="person-img" height="450px" width="450px">
+                <h3 style="color: rgb(17, 38, 84);">Create your free account with <span style="color:rgb(33, 201, 139);">internetcard</span></h3>
+            </div>
+            <div class="home-right">
+                <h1>Log in</h1>
+                <form id="signin-form">
+                    <input type="email" class="email" id="first-value" placeholder="E-mail" required><br>
+                    <input type="password" id="second-value" class="password" placeholder="password" required>
+                </form>
+                <p class="sub-matter">By continuing, you agree to Internetcard's <span style="color: rgb(33, 201, 139);">Terms of Use</span>  and <span style="color: rgb(33, 201, 139);">Privacy Policy.</span> </p>
+                <a href="#" class="forgot">forgot password?</a><br>
+                <button class="sign-in" id="sign-in">Sign in</button>
+                <p class="or">or</p>
+                <div class="last-line">
+                     <a class="not">Not a member yet?</a>
+                     <a href="signup-form.html" class="signup">Signup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+
+        let userdetails = {};
+            //Logic for user sign in or login
+            document.querySelector("#sign-in").addEventListener("click", function() {
+                userdetails.userEmail = document.querySelector("#first-value").value;
+                userdetails.userPassword = document.querySelector("#second-value").value;
+
+                //Checking whether the user has an account
+                if (!localStorage.getItem(userdetails.userEmail)) {
+                alert("No user found with email");
+                } 
+                else if (localStorage.getItem(userdetails.userEmail) === userdetails.userPassword) {
+                alert(`Hello! welcome to internet card ${userdetails.userEmail.slice(0,userdetails.userEmail.indexOf("@"))}`);
+                } 
+                else {
+                alert("Incorrect user name or password");
+                }
+                
+                var payload = JSON.stringify(userdetails);
+
+                localStorage.setItem("userdetails", payload);
+            });
+    </script>
+</body>
+</html>

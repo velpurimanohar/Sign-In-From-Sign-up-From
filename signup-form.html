@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/sign.css">
+</head>
+<body>
+    <section>
+        <div class="home">
+            <div class="home-left">
+                <img src="https://internetcard.in/assets/login-illustration.svg" alt="person-img" class="person-img" height="450px" width="450px">
+                <h3 style="color: rgb(17, 38, 84);">Create your free account with <span style="color:rgb(33, 201, 139);">internetcard</span></h3>
+            </div>
+            <div class="home-right">
+                <h1>Sign up</h1>
+                <form id="signup-form">
+                    <input type="email" class="email" id="first" placeholder="your email" required><br>
+                    <input type="password" id="second" class="password" placeholder="your password" required>
+                    <input type="password" id="third" class="password" placeholder="confirm password" required>
+                </form>
+                <p class="sub-matter">By continuing, you agree to Internetcard's <span style="color: rgb(33, 201, 139);">Terms of Use</span>  and <span style="color: rgb(33, 201, 139);">Privacy Policy.</span> </p>
+                <button class="sign-up" id="sign-up-btn">Sign up</button>
+                <div class="last-line">
+                     <a class="not">Already have an account?</a>
+                     <a href="signin-form.html" class="signin">Signin</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let userinfo = {};
+
+
+        document.querySelector("#sign-up-btn").addEventListener("click", () => {
+                userinfo.Email = document.querySelector("#first").value;
+                userinfo.Password = document.querySelector("#second").value;
+                userinfo.ConfirmPassword = document.querySelector("#third").value;
+            
+                // Checking for passwords mismatch
+                if (userinfo.Password !== userinfo.ConfirmPassword) {
+                alert("Passwords do not match, please reverify!");
+                } 
+                else {
+                alert("Account created successfully!");
+                localStorage.setItem(userinfo.Email, userinfo.Password);
+                }
+
+                var payload = JSON.stringify(userinfo);
+
+                localStorage.setItem("userinfo", payload);
+            });
+    </script>
+</body>
+</html>

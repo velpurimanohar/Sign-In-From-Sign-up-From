@@ -1,0 +1,77 @@
+.home{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.home-left{
+    align-items: center;
+    padding-left: 20px;
+    margin-left: 5%;
+}
+h3{
+    font-size: 35px;
+    width: 72%;
+}
+.home-right{
+    margin-top: 7%;
+    margin-right: 30px;
+    background-color: #e6e6e6;;
+    width: 40%;
+    text-align: center;
+    padding-top: 50px;
+    border-radius: 10px;
+}
+
+.email{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-right: 50%;
+    padding-left: 5%;
+}
+
+.password{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-right: 50%;
+    padding-left: 5%;
+}
+
+.sub-matter{
+    margin-left: 11%;
+    width: 75%;
+    font-size: 13px;
+    color: rgb(17, 38, 84);
+}
+
+.forgot{
+    margin-right: -41%;
+    color: rgb(17, 37, 84);
+    font-size: 15px;
+}
+
+.sign-up{
+    margin-top: 10px;
+    padding: 10px 5%;
+    background-color: rgb(33, 201, 139);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+}
+
+.signin{
+    
+    color: rgb(17, 38, 84);
+}
+.last-line{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
